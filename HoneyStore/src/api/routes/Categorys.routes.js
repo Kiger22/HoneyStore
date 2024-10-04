@@ -1,3 +1,4 @@
+const { isAdmin } = require("../../middlewares/Auth");
 const {
   getCategories,
   getCategoriesById,
@@ -10,10 +11,10 @@ const {
 const categoriesRoutes = require("express").Router();
 
 categoriesRoutes.get("/", getCategories);
-categoriesRoutes.get("/:id", getCategoriesById):
+categoriesRoutes.get("/:id", getCategoriesById);
 categoriesRoutes.get("/:nombre", getCategoriesByName);
-categoriesRoutes.post("/", postCategories);
-categoriesRoutes.put("/:id", putCategories);
-categoriesRoutes.delete("/:id", deleteCategories);
+categoriesRoutes.post("/", [isAdmin], postCategories);
+categoriesRoutes.put("/:id", [isAdmin], putCategories);
+categoriesRoutes.delete("/:id", [isAdmin], deleteCategories);
 
 module.exports = categoriesRoutes;
