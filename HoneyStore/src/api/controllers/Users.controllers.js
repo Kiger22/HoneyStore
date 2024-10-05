@@ -28,7 +28,7 @@ const registerUser = async (req, res, next) => {
     return res.status(201).json(userSaved);
   }
   catch (error) {
-    return res.status(400).json("Error");
+    return res.status(400).json("Error nn");
   }
 };
 
@@ -52,8 +52,50 @@ const loginUser = async (req, res, next) => {
   }
 };
 
+const updateUserRoles = async (req, res) => {
+
+  try {
+    // Buscar el usuario a actualizar
+    const { id } = req.params;
+    const userToUpdate = await User.findById(id);
+    if (!userToUpdate) {
+      return res.status(404).json("Usuario no encontrado");
+    }
+
+    // Actualizar el rol del usuario
+    userToUpdate.role = req.body.role;
+    await userToUpdate.save();
+    return res.status(200).json(userToUpdate);
+  }
+  catch (error) {
+    return res.status(500).json("Error");
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    // Verificar quienes pueden eliminar usuarios
+    if (req.user.role === "admin" || req.user._id.toString() === id) {
+      const userToDelete = await User.findByIdAndDelete(id);
+      // Verificar si el usuario existe 
+      if (!userToDelete) {
+        return res.status(404).json("Usuario no encontrado");
+      }
+      return res.status(200).json("Usuario eliminado correctamente");
+    } else {
+      return res.status(403).json("No tienes permisos para eliminar este usuario");
+    }
+  }
+  catch (error) {
+    return res.status(500).json("Error");
+  }
+};
+
 module.exports = {
   getUser,
   registerUser,
   loginUser,
+  updateUserRoles,
+  deleteUser,
 };

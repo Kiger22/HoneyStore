@@ -14,7 +14,7 @@ const {
 
 const productRoutes = require("express").Router();
 
-productRoutes.get("/", [isAuth], getProduct);
+productRoutes.get("/", getProduct);
 productRoutes.get("/:id", [isAuth], getProductById);
 productRoutes.get("/:nombre", [isAuth], getProductsByName);
 productRoutes.get("/:stock", [isAuth], getProductsByStock);
