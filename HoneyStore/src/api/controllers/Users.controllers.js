@@ -15,11 +15,10 @@ const getUser = async (req, res, next) => {
 //Registrar un nuevo usuario
 const registerUser = async (req, res, next) => {
   try {
-    // Crear un nuevo User con los datos recibidos
+    // Crear un nuevo User con los datos recibidos, sin proporcionar role: que por defecto sera "user".
     const newUser = new User({
       username: req.body.username,
       password: req.body.password, // Contraseña proporcionada (será hasheada más adelante)
-      role: req.body.role || "user" // Rol del usuario, por defecto es "user" si no se proporciona
     });
 
     // Buscar si el usuario ya existe en la base de datos usando el nombre de usuario
