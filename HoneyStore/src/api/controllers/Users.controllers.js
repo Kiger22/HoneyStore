@@ -19,6 +19,8 @@ const registerUser = async (req, res, next) => {
     const newUser = new User({
       username: req.body.username,
       password: req.body.password, // Contraseña proporcionada (será hasheada más adelante)
+      //!role: req.body.role || "user" // Rol del usuario, por defecto es "user" si no se proporciona
+      //? Lo habia creado porque en MongoDB no me permitía cambiar el role.
     });
 
     // Buscar si el usuario ya existe en la base de datos usando el nombre de usuario
