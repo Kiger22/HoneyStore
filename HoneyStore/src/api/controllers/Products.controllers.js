@@ -35,16 +35,15 @@ const getProductsByName = async (req, res, next) => {
 // GET by stock 
 const getProductsByStock = async (req, res, next) => {
   try {
-    const { stock } = 0;
-    const products = await Product.find({ $gt: stock });
+    const { stock } = req.params;
+    const products = await Product.find({ stock: { $gte: stock } });
     return res.status(200).json(products);
   } catch (error) {
-    return res.status(400).json("Algo ha ocurrido un error al obtener los productos con stock");
+    return res.status(400).json("Ha ocurrido un error al obtener los productos con stock.");
   }
 };
 
 // GET by price
-
 const getProductsByPrice = async (req, res, next) => {
   try {
     const { minPrice, maxPrice } = req.params;
@@ -69,6 +68,14 @@ const getProductsByCategory = async (req, res, next) => {
 // POST  
 const postProduct = async (req, res, next) => {
   try {
+    // Verificar si ya existe un producto con el mismo nombre
+    const existingProduct = await Product.findOne({ name: req.body.name });
+
+    if (existingProduct) {
+      return res.status(400).json("Ya existe un producto con este nombre");
+    }
+
+    // Si no existe, crea un nuevo producto
     const newProduct = new Product(req.body);
     const productSaved = await newProduct.save();
     return res.status(201).json(productSaved);

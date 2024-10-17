@@ -3,7 +3,7 @@ const { getUser, registerUser, loginUser, updateUserRoles, deleteUser } = requir
 
 const usersRoutes = require("express").Router();
 
-usersRoutes.get("/", [isAuth], getUser);
+usersRoutes.get("/", [isAdmin], getUser);
 usersRoutes.post("/register", registerUser);
 usersRoutes.post("/login", loginUser);
 usersRoutes.put("/user/:id/role", [isAdmin], updateUserRoles); //ruta para poder cambiar el rol de usuario (solo El admin puede hacerlo)

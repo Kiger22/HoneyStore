@@ -15,12 +15,12 @@ const {
 const productRoutes = require("express").Router();
 
 productRoutes.get("/", getProduct);
-productRoutes.get("/:id", [isAuth], getProductById);
-productRoutes.get("/:nombre", [isAuth], getProductsByName);
-productRoutes.get("/:stock", [isAuth], getProductsByStock);
-productRoutes.get("/:precio", [isAuth], getProductsByPrice);
-productRoutes.get("/:categoria", [isAuth], getProductsByCategory);
-productRoutes.post("/", [isAdmin], postProduct);
+productRoutes.get("/:id", getProductById);
+productRoutes.get("/name/:nombre", getProductsByName);
+productRoutes.get("/stock/:stock", getProductsByStock);
+productRoutes.get("/price/:precio", getProductsByPrice);
+productRoutes.get("/category/:categoria", getProductsByCategory);
+productRoutes.post("/", [isAuth], postProduct);
 productRoutes.put("/:id", [isAdmin], putProduct);
 productRoutes.delete("/:id", [isAdmin], deleteProduct);
 
