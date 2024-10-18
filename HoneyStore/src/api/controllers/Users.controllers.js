@@ -1,5 +1,5 @@
 const { generateSign } = require("../../config/jwt");
-const User = require("../models/user.model");
+const User = require("../models/User.model");
 const bcrypt = require("bcrypt");
 
 //Consultar usuarios (Básico)
@@ -20,7 +20,7 @@ const registerUser = async (req, res, next) => {
       username: req.body.username,
       password: req.body.password, // Contraseña proporcionada (será hasheada más adelante)
       //!role: req.body.role || "user" // Rol del usuario, por defecto es "user" si no se proporciona
-      //? Lo habia creado porque en MongoDB no me permitía cambiar el role.
+      //? Lo había creado porque en MongoDB no me permitía cambiar el role.
     });
 
     // Buscar si el usuario ya existe en la base de datos usando el nombre de usuario
