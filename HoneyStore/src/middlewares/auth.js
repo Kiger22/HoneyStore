@@ -1,4 +1,4 @@
-const User = require("../api/models/user.model");
+const User = require("../api/models/User.model");
 const { verifyJwt } = require("../config/jwt");
 
 // Middleware para verificar si el usuario está autenticado
