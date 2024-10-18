@@ -8,7 +8,7 @@ const categorySchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "nombre de la colección",
+    collection: "categories",
   }
 );
 
