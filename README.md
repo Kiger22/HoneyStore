@@ -49,7 +49,6 @@ La URL base del proyecto es: `http://localhost:3000/api/v1/`
 | **PUT** | `/categories/:id`                 | Actualizar una categoría existente.           |
 | **DELETE**| `/categories/:id`               | Eliminar una categoría.                       |
 
-
 ### Usuarios
 
 | Método  | Endpoint                          | Descripción                                   |
@@ -62,58 +61,60 @@ La URL base del proyecto es: `http://localhost:3000/api/v1/`
 
 ## Instalación
 
-### Pre-requisitos 
+### Pre-requisitos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 
-  - [Node.js](https://nodejs.org/) versión 14 o superior
-  - [npm](https://www.npmjs.com/) 
-  - Base de datos [MongoDB](https://www.mongodb.com/es)
+- [Node.js](https://nodejs.org/) versión 14 o superior
+- [npm](https://www.npmjs.com/)
+- Base de datos [MongoDB](https://www.mongodb.com/es)
 
-
-#### 1. Clona el repositorio:
+#### 1. Clona el repositorio
 
 Aquí esta el repositorio del proyecto.[Repositorio del proyecto](https://github.com/Kiger22/WorldTourBBDD)
 
 #### 2. Instala dependencias
 
-```
+```bash
 >npm install
 ```
+
 #### 3. Crear archivo _**.env**_
 
 En nuestro caso ya lo proporcionamos en el repositorio del proyecto
 
-    BD_URL = <tu_conexión_mongodb>  
-    JWT_SECRET = <tu_secreto_jwt>  
-    PORT = 3000
+```bash
+BD_URL = <tu_conexión_mongodb>
+JWT_SECRET = <tu_secreto_jwt>  
+PORT = 3000
+```
 
 #### 4. Inicia wl servidor
 
-```
+```bash
 >npm run dev
 ```
 
-## Ejecutando las pruebas 
+## Ejecutando las pruebas
 
 _Para probar que la base de datos y sus controladores funcionan correctamente hemos utilizado [INSOMNIA](https://insomnia.rest/)_
 
 ## Tecnologías Utilizadas
 
-* [Node.js](https://nodejs.org/en) 
-* [MongoDB](https://www.mongodb.com/es) -Plataforma de BBDD
-* [Express](https://expressjs.com/es/): Framework de servidor para Node.js.
-* [Mongoose](): ODM para MongoDB.
-* [Bcrypt](): Para el hashing de contraseñas.
-* [Dotenv](): Para la gestión de variables de entorno.
-* [JWT (JsonWebToken)](): Para la autenticación basada en tokens.
-* [Nodemon](): Para el reinicio automático del servidor durante el desarrollo.
+- [Node.js](https://nodejs.org/en)
+- [MongoDB](https://www.mongodb.com/es) -Plataforma de BBDD
+- [Express](https://expressjs.com/es/): Framework de servidor para Node.js.
+- [Mongoose](http://): ODM para MongoDB.
+- [Bcrypt](http://): Para el hashing de contraseñas.
+- [Dotenv](http://): Para la gestión de variables de entorno.
+- [JWT (JsonWebToken)](http://): Para la autenticación basada en tokens.
+- [Nodemon](http://): Para el reinicio automático del servidor durante el desarrollo.
 
-## Autores 
+## Autores
 
-_Este proyecto Esta realizado por Guillermo Mendoza_
+Este proyecto Esta realizado por Guillermo Mendoza_
 
-* **Kiger22** - *Proyecto* - [LinkedIn](www.linkedin.com/in/guillermo-mendoza-costa-46a87744)
+- **Kiger22** - *Proyecto* - [LinkedIn](www.linkedin.com/in/guillermo-mendoza-costa-46a87744)
 
 ## Contribuciones
 
@@ -125,16 +126,15 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue los si
 - Haz push a la rama (git push origin nueva-funcionalidad).
 - Abre un Pull Request.
 
-## Licencia 
+## Licencia
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
-## Expresiones de Gratitud 
+## Expresiones de Gratitud
 
-* Rock the Code  
-* Gracias por las contribuciones, feedback y correcciones.
+- Rock the Code  
+- Gracias por las contribuciones, feedback y correcciones.
 
 ---
 
-
-##### ⌨️ por [kiger22](https://github.com/Kiger22) 
+### ⌨️ por [kiger22](https://github.com/Kiger22) 

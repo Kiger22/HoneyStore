@@ -42,7 +42,6 @@ const registerUser = async (req, res, next) => {
   }
 };
 
-
 //Actualizar un usuario
 const loginUser = async (req, res, next) => {
   try {
@@ -106,7 +105,6 @@ const updateUserRoles = async (req, res) => {
     return res.status(500).json("Error");
   }
 };
-
 
 // Función para eliminar un usuario
 const deleteUser = async (req, res) => {
